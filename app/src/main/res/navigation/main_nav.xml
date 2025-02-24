@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.ecomarceapplication.views.stater.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_regestationFragment"
+            app:destination="@id/regestationFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.ecomarceapplication.views.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_daseboardFragment"
+            app:destination="@id/daseboardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/regestationFragment"
+        android:name="com.example.ecomarceapplication.views.registoar.RegestationFragment"
+        android:label="fragment_regestation"
+        tools:layout="@layout/fragment_regestation" >
+        <action
+            android:id="@+id/action_regestationFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/daseboardFragment"
+        android:name="com.example.ecomarceapplication.DaseboardFragment"
+        android:label="fragment_daseboard"
+        tools:layout="@layout/fragment_daseboard" />
+</navigation>

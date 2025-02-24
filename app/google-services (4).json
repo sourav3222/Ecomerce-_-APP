@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "393376198306",
+    "project_id": "e-comarce-e5b61",
+    "storage_bucket": "e-comarce-e5b61.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393376198306:android:3db61ae5812ba8e356b1fb",
+        "android_client_info": {
+          "package_name": "com.example.ecomarceapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4yXNfyRQ8AE4wFwXPpuw9Er8WTJ_v8t8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
