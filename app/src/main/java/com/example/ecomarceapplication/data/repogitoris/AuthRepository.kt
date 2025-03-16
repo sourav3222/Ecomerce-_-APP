@@ -1,5 +1,6 @@
 package com.example.ecomarceapplication.data.repogitoris
 
+import com.example.ecomarceapplication.data.models.UserLogin
 import com.example.ecomarceapplication.data.models.UserRegister
 import com.example.ecomarceapplication.services.AuthService
 import com.google.android.gms.tasks.Task
@@ -15,5 +16,11 @@ class AuthRepository: AuthService {
         val jAuth = FirebaseAuth.getInstance()
 
       return  jAuth.createUserWithEmailAndPassword(user.email,user.password)
+    }
+
+    override fun userLogin(user: UserLogin) :Task<AuthResult> {
+        val jAuth = FirebaseAuth.getInstance()
+
+        return jAuth.signInWithEmailAndPassword(user.email, user.password)
     }
 }
