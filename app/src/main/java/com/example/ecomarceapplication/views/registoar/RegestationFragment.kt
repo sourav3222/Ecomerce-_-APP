@@ -13,7 +13,10 @@ import com.example.ecomarceapplication.core.DataState
 import com.example.ecomarceapplication.data.models.UserRegister
 import com.example.ecomarceapplication.databinding.FragmentRegestationBinding
 import com.example.ecomarceapplication.isEmpty
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class RegestationFragment : BaseFragment<FragmentRegestationBinding>(FragmentRegestationBinding::inflate) {
 
 

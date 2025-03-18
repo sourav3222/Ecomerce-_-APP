@@ -9,7 +9,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.ecomarceapplication.R
 import com.example.ecomarceapplication.base.BaseFragment
 import com.example.ecomarceapplication.databinding.FragmentStartBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class StartFragment : BaseFragment<FragmentStartBinding>(FragmentStartBinding::inflate) {
 
 

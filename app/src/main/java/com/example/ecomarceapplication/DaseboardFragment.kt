@@ -5,17 +5,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.ecomarceapplication.base.BaseFragment
+import com.example.ecomarceapplication.databinding.FragmentDaseboardBinding
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
+class DaseboardFragment : BaseFragment<FragmentDaseboardBinding>(FragmentDaseboardBinding::inflate) {
 
 
-class DaseboardFragment : Fragment() {
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_daseboard, container, false)
+    override fun setListner() {
+        TODO("Not yet implemented")
+    }
+
+    override fun allObserver() {
+        TODO("Not yet implemented")
     }
 
 

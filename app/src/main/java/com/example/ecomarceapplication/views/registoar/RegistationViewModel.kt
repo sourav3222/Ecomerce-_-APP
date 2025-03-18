@@ -7,8 +7,12 @@ import com.example.ecomarceapplication.core.DataState
 import com.example.ecomarceapplication.data.models.UserRegister
 import com.example.ecomarceapplication.data.repogitoris.AuthRepository
 import com.example.ecomarceapplication.services.AuthService
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class RegistationViewModel: ViewModel() {
+
+@HiltViewModel
+class RegistationViewModel @Inject constructor(val authService: AuthRepository): ViewModel() {
 
     private val _registrationResponse = MutableLiveData<DataState<UserRegister>>()
 
@@ -22,7 +26,7 @@ class RegistationViewModel: ViewModel() {
 
         _registrationResponse.postValue(DataState.Loading())
 
-        val authService = AuthRepository()
+
 
         authService.userRegistation(user).
                 addOnSuccessListener{
