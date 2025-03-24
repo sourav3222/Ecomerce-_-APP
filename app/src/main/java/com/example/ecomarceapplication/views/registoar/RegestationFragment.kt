@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.ecomarceapplication.R
 import com.example.ecomarceapplication.base.BaseFragment
 import com.example.ecomarceapplication.core.DataState
@@ -82,6 +83,8 @@ class RegestationFragment : BaseFragment<FragmentRegestationBinding>(FragmentReg
 
 
                     Toast.makeText(context, "created User: ${it.data}", Toast.LENGTH_SHORT).show()
+
+                    findNavController().navigate(R.id.action_regestationFragment_to_daseboardFragment)
                 }
             }
 

@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_startFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_daseboardFragment"
+            app:destination="@id/daseboardFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -25,6 +28,9 @@
         <action
             android:id="@+id/action_loginFragment_to_daseboardFragment"
             app:destination="@id/daseboardFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_regestationFragment"
+            app:destination="@id/regestationFragment" />
     </fragment>
     <fragment
         android:id="@+id/regestationFragment"
@@ -34,10 +40,17 @@
         <action
             android:id="@+id/action_regestationFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_regestationFragment_to_daseboardFragment"
+            app:destination="@id/daseboardFragment" />
     </fragment>
     <fragment
         android:id="@+id/daseboardFragment"
         android:name="com.example.ecomarceapplication.DaseboardFragment"
         android:label="fragment_daseboard"
-        tools:layout="@layout/fragment_daseboard" />
+        tools:layout="@layout/fragment_daseboard" >
+        <action
+            android:id="@+id/action_daseboardFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
 </navigation>

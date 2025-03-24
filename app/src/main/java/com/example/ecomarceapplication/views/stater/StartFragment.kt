@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.ecomarceapplication.R
 import com.example.ecomarceapplication.base.BaseFragment
 import com.example.ecomarceapplication.databinding.FragmentStartBinding
+import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -20,6 +21,8 @@ class StartFragment : BaseFragment<FragmentStartBinding>(FragmentStartBinding::i
 
 
     override fun setListner() {
+        setUpAutoLogin()
+
         with(binding){
 
             Loginbtn.setOnClickListener{
@@ -32,6 +35,15 @@ class StartFragment : BaseFragment<FragmentStartBinding>(FragmentStartBinding::i
             }
 
 
+
+        }
+    }
+
+    private fun setUpAutoLogin() {
+
+        FirebaseAuth.getInstance().currentUser?.let {
+
+            findNavController().navigate(R.id.action_startFragment_to_daseboardFragment)
 
         }
     }

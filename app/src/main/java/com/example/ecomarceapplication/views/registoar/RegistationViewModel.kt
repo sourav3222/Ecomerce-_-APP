@@ -31,7 +31,26 @@ class RegistationViewModel @Inject constructor(val authService: AuthRepository):
         authService.userRegistation(user).
                 addOnSuccessListener{
 
-                    _registrationResponse.postValue(DataState.Success(user))
+                    it.user?.let { createdUser->
+
+                        user.userID = createdUser.uid
+
+
+
+                        authService.creatUser(user).addOnSuccessListener{
+
+                            _registrationResponse.postValue(DataState.Success(user))
+
+                        }.addOnFailureListener{ error->
+
+                            _registrationResponse.postValue(DataState.Error("${error.message}"))
+
+
+                        }
+
+                    }
+
+
 
                 }.addOnFailureListener{error->
 
