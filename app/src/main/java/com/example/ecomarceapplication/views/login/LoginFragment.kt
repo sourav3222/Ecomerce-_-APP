@@ -1,5 +1,6 @@
 package com.example.ecomarceapplication.views.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,7 @@ import com.example.ecomarceapplication.core.DataState
 import com.example.ecomarceapplication.data.models.UserLogin
 import com.example.ecomarceapplication.databinding.FragmentLoginBinding
 import com.example.ecomarceapplication.isEmpty
+import com.example.ecomarceapplication.views.dashboard.seller.SellerDashboard
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -72,7 +74,11 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                 is DataState.Success -> {
                     loading.dismiss()
                     Toast.makeText(context, "created User: ${it.data}", Toast.LENGTH_SHORT).show()
-                    findNavController().navigate(R.id.action_loginFragment_to_daseboardFragment)
+
+                    startActivity(Intent(requireContext(), SellerDashboard ::class.java))
+
+                    requireActivity().finish()
+
                 }
             }
         }

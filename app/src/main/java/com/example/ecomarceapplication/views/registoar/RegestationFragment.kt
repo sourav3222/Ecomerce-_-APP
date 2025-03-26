@@ -1,5 +1,6 @@
 package com.example.ecomarceapplication.views.registoar
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,7 @@ import com.example.ecomarceapplication.core.DataState
 import com.example.ecomarceapplication.data.models.UserRegister
 import com.example.ecomarceapplication.databinding.FragmentRegestationBinding
 import com.example.ecomarceapplication.isEmpty
+import com.example.ecomarceapplication.views.dashboard.seller.SellerDashboard
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -84,7 +86,10 @@ class RegestationFragment : BaseFragment<FragmentRegestationBinding>(FragmentReg
 
                     Toast.makeText(context, "created User: ${it.data}", Toast.LENGTH_SHORT).show()
 
-                    findNavController().navigate(R.id.action_regestationFragment_to_daseboardFragment)
+                    startActivity(Intent(requireContext(), SellerDashboard ::class.java))
+
+                    requireActivity().finish()
+
                 }
             }
 

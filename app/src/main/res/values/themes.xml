@@ -6,4 +6,5 @@
     </style>
 
     <style name="Theme.EComarceApplication" parent="Base.Theme.EComarceApplication" />
+    <style name="Theme.EComarceApplication.App.Bar" parent="Theme.Material3.DayNight" />
 </resources>

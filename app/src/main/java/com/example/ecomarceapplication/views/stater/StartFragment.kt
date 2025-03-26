@@ -1,5 +1,6 @@
 package com.example.ecomarceapplication.views.stater
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.ecomarceapplication.R
 import com.example.ecomarceapplication.base.BaseFragment
 import com.example.ecomarceapplication.databinding.FragmentStartBinding
+import com.example.ecomarceapplication.views.dashboard.seller.SellerDashboard
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -43,7 +45,9 @@ class StartFragment : BaseFragment<FragmentStartBinding>(FragmentStartBinding::i
 
         FirebaseAuth.getInstance().currentUser?.let {
 
-            findNavController().navigate(R.id.action_startFragment_to_daseboardFragment)
+           startActivity(Intent(requireContext(), SellerDashboard ::class.java))
+
+            requireActivity().finish()
 
         }
     }
